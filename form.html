@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flush Backend Take Home Assesment</title>
+
+    <style>
+        body {
+            text-align: center; /* Center Alignment */
+        }
+
+        form {
+            display: inline-block; /* Inline block element */
+            text-align: left; /* Left-align the form fields within the block */
+        }
+
+        label {
+            display: block; /* Display labels as block-level elements (one below the other) */
+            text-align: left; /* Left-align the labels */
+            margin-bottom: 10px; /* Add some spacing between labels */
+        }
+
+        /* Style for input fields */
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%; /* Set input fields and select to 100% width */
+            padding: 5px; /* Add some padding for better appearance */
+            margin-bottom: 10px; /* Add some spacing between input fields */
+        }
+
+        .center-button {
+            text-align: center; /* Center-align the button text */
+            margin: 10px 0; /* Add margin to center vertically */
+        }
+
+        /* Style for submit button */
+        input[type="submit"] {
+            width: auto; /* Auto width for submit button */
+        }
+    </style>
+
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flush Backend Take Home Assessment</title>
+</head>
+<body>
+    <h1>Flush Backend Take Home Assessment</h1>
+    <form method="POST" action="http://127.0.0.1:5000/process_transaction">
+        <label for="userId">User ID:</label>
+        <input type="text" name="userId" id="userId" required pattern="[a-zA-Z]+" title="Please enter a string"><br><br>
+
+        <label for="listingId">Listing ID:</label>
+        <input type="text" name="listingId" id="listingId" required pattern="[a-zA-Z]+" title="Please enter a string"><br><br>
+
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" required pattern="^\d+(\.\d{2}|\.\d{1})?$" title="Please enter a valid float number with one or two decimal places (e.g., 3.42 or 3.4)">
+        <br><br>
+
+        <label for="currency">Currency:</label>
+        <select name="currency" id="currency" required>
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+        </select><br><br>
+        
+        <label for="timestamp">Timestamp:</label>
+        <input type="number" name="timestamp" id="timestamp" required pattern="\d+" title="Please enter an integer number"><br><br>
+
+        <label for="recipient">Recipient:</label>
+        <input type="text" name="recipient" id="recipient" required pattern="[a-zA-Z]+" title="Please enter a string"><br><br>
+
+
+        <div class="center-button">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
+
+</html>
