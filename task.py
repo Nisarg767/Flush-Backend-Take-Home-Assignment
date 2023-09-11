@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 import math
-
+import time
 app = Flask(__name__)
 
 @app.route('/')
@@ -56,13 +56,14 @@ def process_transaction():
         elif currency == "eur" and final_price < 2.8:
             final_price = 2.8
 
-        # Update timestamp (increment by 1)
-        timestamp += 1
+        # Update timestamp 
+        timestamp_ms = int(time.time() * 1000)
+
 
         # Return the transaction response
         response = {
             "Final price": final_price,
-            "Timestamp": timestamp
+            "Timestamp": timestamp_ms
         }
         return jsonify(response)
 
