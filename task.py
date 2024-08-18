@@ -7,7 +7,6 @@ app = Flask(__name__)
 def transaction_form():
     return render_template('form.html')
 
-@app.route('/process_transaction', methods=['POST'])
 def process_transaction():
     try:
         # Get data from the form
